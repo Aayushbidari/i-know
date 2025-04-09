@@ -56,6 +56,34 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
+        .slider-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffe6ea;
+        }
+
+        .slider-container {
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .slider-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slider-container img.active {
+            display: block;
+        }
+
         .poem-section {
             display: flex;
             justify-content: center;
@@ -130,7 +158,16 @@
         </div>
     </div>
 
-    <div class="poem-section" id="section2">
+    <div class="slider-section" id="section2">
+        <div class="slider-container">
+            <img src="image1.jpg" class="active" alt="Slide 1">
+            <img src="image2.jpg" alt="Slide 2">
+            <img src="image3.jpg" alt="Slide 3">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div class="poem-section" id="section3">
         <h2>To My Dearest Prapti</h2>
         <div class="poem">
             In your eyes, I find my dawn,<br>
@@ -152,11 +189,21 @@
 
     <script>
         console.log("Welcome to My love page ♥");
-        // Trigger animations manually to ensure smooth entrance
+
         window.addEventListener('load', () => {
             document.querySelector('.text').style.opacity = 1;
             document.querySelector('.image').style.opacity = 1;
         });
+
+        // Image slider logic
+        const images = document.querySelectorAll('.slider-container img');
+        let current = 0;
+
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 10000); // 10 seconds
     </script>
 </body>
 </html>
