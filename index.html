@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY love</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f5;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff9aa2, #ffb7b2);
+            padding: 20px 40px;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1.5s ease-out;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .text {
+            flex: 1;
+            font-size: 3rem;
+            color: #e75480;
+            font-weight: bold;
+            animation: fadeInLeft 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            animation: fadeInRight 2s ease-out forwards;
+            opacity: 0;
+        }
+
+        .image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .poem-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(to right, #ffe4e1, #ffccd5);
+            padding: 60px;
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .poem-section h2 {
+            font-size: 2.5rem;
+            color: #d6336c;
+            margin-bottom: 20px;
+        }
+
+        .poem {
+            font-size: 1.5rem;
+            max-width: 800px;
+            color: #4b2e2e;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>💖 Welcome to My Love Page 💖</header>
+
+    <div class="section" id="section1">
+        <div class="text">My loveee</div>
+        <div class="image">
+            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Love Sign">
+        </div>
+    </div>
+
+    <div class="poem-section" id="section2">
+        <h2>To My Dearest Prapti</h2>
+        <div class="poem">
+            In your eyes, I find my dawn,<br>
+            Where every worry is gently gone.<br>
+            Your smile paints my skies so blue,<br>
+            My heart beats only, only for you.<br><br>
+
+            Through whispers of the moonlit air,<br>
+            I feel your presence everywhere.<br>
+            In every breath, in every view,<br>
+            My world begins and ends with you.<br><br>
+
+            Prapti, you’re my sweetest rhyme,<br>
+            My love, my dream, my endless time.<br>
+            With you, forever feels so right,<br>
+            You are my day, my starry night.
+        </div>
+    </div>
+
+    <script>
+        console.log("Welcome to My love page ♥");
+        // Trigger animations manually to ensure smooth entrance
+        window.addEventListener('load', () => {
+            document.querySelector('.text').style.opacity = 1;
+            document.querySelector('.image').style.opacity = 1;
+        });
+    </script>
+</body>
+</html>
