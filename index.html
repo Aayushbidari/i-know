@@ -54,6 +54,7 @@
             height: auto;
             border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: zoomIn 1.5s ease-out;
         }
 
         .slider-section {
@@ -78,6 +79,7 @@
             height: 100%;
             object-fit: cover;
             display: none;
+            animation: zoomIn 2s ease-out;
         }
 
         .slider-container img.active {
@@ -146,6 +148,69 @@
                 transform: translateY(0);
             }
         }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+
+            .section {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .text {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .image img {
+                max-width: 90%;
+            }
+
+            .slider-container {
+                width: 100%;
+                height: 300px;
+            }
+
+            .poem-section h2 {
+                font-size: 2rem;
+            }
+
+            .poem {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+        }
+
+        /* For very small devices like phones in portrait mode */
+        @media (max-width: 480px) {
+            .text {
+                font-size: 1.5rem;
+            }
+
+            .poem {
+                font-size: 1rem;
+            }
+
+            .poem-section {
+                padding: 40px 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -164,7 +229,6 @@
             <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/64fc8b10-093c-44fd-91af-53eb2db36612.png" alt="Slide 2">
             <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/72140d8d-a377-46d5-b53b-36b26798349a.png" alt="Slide 3">
             <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/file_0000000098685230a9f641738e1c3d3f_conversation_id%3D67ea1a25-64a4-8001-8a58-02e10b926c7d%26message_id%3D3975f91c-78a6-4ffd-bab2-a2f89ac7a6f4.PNG" alt="Slide 4">
-            <!-- Add more images as needed -->
         </div>
     </div>
 
