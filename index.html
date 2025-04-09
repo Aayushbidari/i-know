@@ -78,12 +78,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none;
-            animation: zoomIn 2s ease-out;
+            opacity: 0; /* Hide all images initially */
+            transition: opacity 1s ease-out; /* Smooth transition for opacity */
         }
 
         .slider-container img.active {
-            display: block;
+            opacity: 1; /* Make active image visible */
         }
 
         .poem-section {
@@ -256,8 +256,13 @@
         console.log("Welcome to My love page ♥");
 
         window.addEventListener('load', () => {
+            // Set opacity to 1 for the text and image
             document.querySelector('.text').style.opacity = 1;
             document.querySelector('.image').style.opacity = 1;
+
+            // Ensure the first image is visible on load
+            const images = document.querySelectorAll('.slider-container img');
+            images[0].classList.add('active'); // Add 'active' class to the first image immediately
         });
 
         // Image slider logic
@@ -265,9 +270,9 @@
         let current = 0;
 
         setInterval(() => {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
+            images[current].classList.remove('active'); // Hide current image
+            current = (current + 1) % images.length; // Move to the next image
+            images[current].classList.add('active'); // Show next image
         }, 10000); // 10 seconds
     </script>
 </body>
