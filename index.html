@@ -1,279 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY love</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff0f5;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Pathibhara Guest House - Comfortable and affordable lodging in a serene environment." />
+  <meta name="keywords" content="Pathibhara Guest House, hotel, guest house, lodging, travel, tourism, Nepal" />
+  <meta name="author" content="Pathibhara Guest House" />
+  <title>Pathibhara Guest House</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
 
-        header {
-            background: linear-gradient(to right, #ff9aa2, #ffb7b2);
-            padding: 20px 40px;
-            text-align: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideDown 1.5s ease-out;
-        }
+    /* HEADER */
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f5f5f5;
+      color: black;
+    }
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+      color: black;
+    }
+    .contact-social {
+      text-align: right;
+      color: black;
+    }
+    .contact-social p {
+      margin: 0 0 5px 0;
+    }
+    .contact-social a {
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+    }
+    .contact-social a.facebook:hover {
+      color: #3b5998;
+    }
+    .contact-social a.instagram:hover {
+      color: #e1306c;
+    }
+    .contact-social a.twitter:hover {
+      color: #1da1f2;
+    }
 
-        .section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            height: 100vh;
-            overflow: hidden;
-        }
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
 
-        .text {
-            flex: 1;
-            font-size: 3rem;
-            color: #e75480;
-            font-weight: bold;
-            animation: fadeInLeft 2s ease-out forwards;
-            opacity: 0;
-        }
-
-        .image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            animation: fadeInRight 2s ease-out forwards;
-            opacity: 0;
-        }
-
-        .image img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            animation: zoomIn 1.5s ease-out;
-        }
-
-        .slider-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #ffe6ea;
-        }
-
-        .slider-container {
-            width: 80%;
-            max-width: 800px;
-            height: 500px;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        .slider-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0; /* Hide all images initially */
-            transition: opacity 1s ease-out; /* Smooth transition for opacity */
-        }
-
-        .slider-container img.active {
-            opacity: 1; /* Make active image visible */
-        }
-
-        .poem-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background: linear-gradient(to right, #ffe4e1, #ffccd5);
-            padding: 60px;
-            text-align: center;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        .poem-section h2 {
-            font-size: 2.5rem;
-            color: #d6336c;
-            margin-bottom: 20px;
-        }
-
-        .poem {
-            font-size: 1.5rem;
-            max-width: 800px;
-            color: #4b2e2e;
-            line-height: 1.8;
-            font-style: italic;
-        }
-
-        @keyframes fadeInLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            0% {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes zoomIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            header {
-                font-size: 1.5rem;
-                padding: 15px 30px;
-            }
-
-            .section {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-
-            .text {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .image img {
-                max-width: 90%;
-            }
-
-            .slider-container {
-                width: 100%;
-                height: 300px;
-            }
-
-            .poem-section h2 {
-                font-size: 2rem;
-            }
-
-            .poem {
-                font-size: 1.2rem;
-                padding: 10px;
-            }
-        }
-
-        /* For very small devices like phones in portrait mode */
-        @media (max-width: 480px) {
-            .text {
-                font-size: 1.5rem;
-            }
-
-            .poem {
-                font-size: 1rem;
-            }
-
-            .poem-section {
-                padding: 40px 10px;
-            }
-        }
-    </style>
+    /* HOME SECTION */
+    #home {
+      height: 500px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+    #home-banner {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+      z-index: 0;
+      filter: brightness(0.6);
+    }
+    #home-content {
+      position: relative;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    #home-content h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    #home-content p {
+      font-size: 18px;
+      line-height: 1.5;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 <body>
-    <header>💖 Welcome to My Love Page 💖</header>
-
-    <div class="section" id="section1">
-        <div class="text">My loveee</div>
-        <div class="image">
-            <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Love Sign">
-        </div>
+  <header>
+    <div class="top-header">
+      <div class="logo">
+        <h1>Pathibhara Guest House</h1>
+      </div>
+      <div class="contact-social">
+        <p>Call us: +977-9800000000</p>
+        <a href="#" class="facebook" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#" class="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter</a>
+      </div>
     </div>
 
-    <div class="slider-section" id="section2">
-        <div class="slider-container">
-            <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/52e29fde-d926-4343-aef2-ccf1f0e20949.png" alt="Slide 1">
-            <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/64fc8b10-093c-44fd-91af-53eb2db36612.png" alt="Slide 2">
-            <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/72140d8d-a377-46d5-b53b-36b26798349a.png" alt="Slide 3">
-            <img src="https://raw.githubusercontent.com/Aayushbidari/i-know/main/file_0000000098685230a9f641738e1c3d3f_conversation_id%3D67ea1a25-64a4-8001-8a58-02e10b926c7d%26message_id%3D3975f91c-78a6-4ffd-bab2-a2f89ac7a6f4.PNG" alt="Slide 4">
-        </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Prices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div id="home-banner"></div>
+    <div id="home-content">
+      <h2>Welcome to Pathibhara Guest House</h2>
+      <p>Your cozy retreat nestled in the lap of nature. Enjoy comfortable rooms, warm hospitality, and breathtaking views.</p>
     </div>
+  </section>
 
-    <div class="poem-section" id="section3">
-        <h2>To My Dearest Prapti</h2>
-        <div class="poem">
-            In your eyes, I find my dawn,<br>
-            Where every worry is gently gone.<br>
-            Your smile paints my skies so blue,<br>
-            My heart beats only, only for you.<br><br>
+  <script>
+    const images = [
+      'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/277572/pexels-photo-277572.jpeg?auto=compress&cs=tinysrgb&w=600'
+    ];
 
-            Through whispers of the moonlit air,<br>
-            I feel your presence everywhere.<br>
-            In every breath, in every view,<br>
-            My world begins and ends with you.<br><br>
+    let current = 0;
+    const banner = document.getElementById('home-banner');
 
-            Prapti, you’re my sweetest rhyme,<br>
-            My love, my dream, my endless time.<br>
-            With you, forever feels so right,<br>
-            You are my day, my starry night.
-        </div>
-    </div>
+    function rotateBackground() {
+      banner.style.backgroundImage = `url(${images[current]})`;
+      current = (current + 1) % images.length;
+    }
 
-    <script>
-        console.log("Welcome to My love page ♥");
-
-        window.addEventListener('load', () => {
-            // Set opacity to 1 for the text and image
-            document.querySelector('.text').style.opacity = 1;
-            document.querySelector('.image').style.opacity = 1;
-
-            // Ensure the first image is visible on load
-            const images = document.querySelectorAll('.slider-container img');
-            images[0].classList.add('active'); // Add 'active' class to the first image immediately
-        });
-
-        // Image slider logic
-        const images = document.querySelectorAll('.slider-container img');
-        let current = 0;
-
-        setInterval(() => {
-            images[current].classList.remove('active'); // Hide current image
-            current = (current + 1) % images.length; // Move to the next image
-            images[current].classList.add('active'); // Show next image
-        }, 10000); // 10 seconds
-    </script>
+    rotateBackground();
+    setInterval(rotateBackground, 10000); // rotate every 10 seconds
+  </script>
 </body>
 </html>
