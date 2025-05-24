@@ -116,6 +116,73 @@
       line-height: 1.5;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
+
+    /* SERVICES SECTION */
+    #services {
+      padding: 50px 20px;
+      background-color: #fafafa;
+      text-align: center;
+    }
+    #services h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .service-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .service-box {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .service-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .service-box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
+    }
+    .service-details {
+      padding: 20px;
+      text-align: center;
+    }
+    .service-price {
+      font-size: 20px;
+      color: #007bff;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 1000px) {
+      .service-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .service-box {
+        width: 90%;
+        max-width: 400px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -150,6 +217,59 @@
     </div>
   </section>
 
+  <section id="services">
+    <h2>Our Rooms & Services</h2>
+    <div class="service-container">
+      <!-- First 3 service boxes -->
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Standard Room" />
+        <div class="service-details">
+          <div class="service-price">$50 / night</div>
+          <div class="service-desc">Cozy standard room with essential amenities for a comfortable stay.</div>
+        </div>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Deluxe Room" />
+        <div class="service-details">
+          <div class="service-price">$75 / night</div>
+          <div class="service-desc">Spacious deluxe room with premium facilities and beautiful views.</div>
+        </div>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/271667/pexels-photo-271667.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Suite Room" />
+        <div class="service-details">
+          <div class="service-price">$120 / night</div>
+          <div class="service-desc">Luxurious suite with separate living area, perfect for families and groups.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-container" style="margin-top: 40px;">
+      <!-- Additional 3 service boxes -->
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Family Room" />
+        <div class="service-details">
+          <div class="service-price">$90 / night</div>
+          <div class="service-desc">Comfortable family room with extra beds and kid-friendly amenities.</div>
+        </div>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/277572/pexels-photo-277572.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Restaurant Service" />
+        <div class="service-details">
+          <div class="service-price">Included</div>
+          <div class="service-desc">On-site restaurant offering local and international cuisine.</div>
+        </div>
+      </div>
+      <div class="service-box">
+        <img src="https://images.pexels.com/photos/261395/pexels-photo-261395.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Spa & Wellness" />
+        <div class="service-details">
+          <div class="service-price">$40 / session</div>
+          <div class="service-desc">Relaxing spa and wellness treatments to rejuvenate your body and mind.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script>
     const images = [
       'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -157,16 +277,16 @@
       'https://images.pexels.com/photos/277572/pexels-photo-277572.jpeg?auto=compress&cs=tinysrgb&w=600'
     ];
 
-    let current = 0;
-    const banner = document.getElementById('home-banner');
+    let currentIndex = 0;
+    const homeBanner = document.getElementById('home-banner');
 
     function rotateBackground() {
-      banner.style.backgroundImage = `url(${images[current]})`;
-      current = (current + 1) % images.length;
+      homeBanner.style.backgroundImage = `url('${images[currentIndex]}')`;
+      currentIndex = (currentIndex + 1) % images.length;
     }
 
     rotateBackground();
-    setInterval(rotateBackground, 10000); // rotate every 10 seconds
+    setInterval(rotateBackground, 10000); // 10 seconds interval
   </script>
 </body>
 </html>
